@@ -18,7 +18,7 @@
     text-align: center;
     border-radius: 10px;
 }
-#heading, #smallButtonParent {
+#filters, #smallButtonParent {
     display: table;    
     table-layout: fixed; /*Optional*/
     border-spacing: 10px; /*Optional*/
@@ -43,6 +43,24 @@
 #centerManager {
     margin-left: 550px;
 }
-#currentMiddleImage {
+.currentMiddleImage {    
+    display: table-cell;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
     background-color: #B64561;
+    margin: 10px;    
+    margin-left: 200px;
+}
+#leftMask, #rightMask {
+    position:absolute;
+    background-color: grey;
+    width: 400px;
+    height: 350px;    
+    margin-top: 100px;
+    opacity: 0.9;
+
+}
+#rightMask {
+    margin-left: 900px;
 }
