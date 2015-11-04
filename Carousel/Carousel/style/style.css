@@ -1,0 +1,48 @@
+﻿h5 {
+    margin: 10px;
+    padding: 3px; 
+    width: 70px;
+    height: 10px;
+    margin-left: 300px;   
+    color: #515151;
+    /*display: table-cell;*/
+}
+
+.butt {        
+    display: table-cell;
+    padding: 5px;
+    margin: 10px;
+    background-color: #F1F1F1;
+    width: 120px;
+    height: 30px;    
+    text-align: center;
+    border-radius: 10px;
+}
+#heading, #smallButtonParent {
+    display: table;    
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.pictures {
+    width: 440px;
+}
+#leftSide, #rightSide {
+    opacity: 10;
+    background-color: #716462;
+}
+
+.bottomButt{    
+    display: table-cell;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #666666;
+    margin: 10px;    
+    margin-left: 200px;
+}
+#centerManager {
+    margin-left: 550px;
+}
+#currentMiddleImage {
+    background-color: #B64561;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Carousel",
+  "version": "0.0.0",
+  "description": "Carousel",
+  "main": "app.js",
+  "author": {
+    "name": "hp",
+    "email": ""
+  }
+}
