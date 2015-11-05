@@ -2,20 +2,16 @@
     var arrFurniture = ["img\\furniture\\furniture1.jpg", "img\\furniture\\furniture2.jpg", "img\\furniture\\furniture3.jpg", "img\\furniture\\furniture4.jpg", "img\\furniture\\furniture5.jpg"];
     var arrCars = ["img\\cars\\cars1.jpg", "img\\cars\\cars2.jpg", "img\\cars\\cars3.jpg", "img\\cars\\cars4.jpg", "img\\cars\\cars5.jpg"];    
     var arrGames = ["img\\games\\game1.jpg", "img\\games\\game2.jpg", "img\\games\\game3.jpg", "img\\games\\game4.jpg", "img\\games\\game5.jpg" ];
-    var navigationIndex = 0;
+    var navigationIndex = 0;    
+    var arrOutput = [];
             
     arrFurniture = shuffle(arrFurniture);
     arrCars = shuffle(arrCars);
-    arrGames = shuffle(arrGames);
+    arrGames = shuffle(arrGames);   
     
-    var arrOutput = [];
-    
-
     $('#buttFurniture').click(onFilterCLick);    
     $('#buttCars').click(onFilterCLick);
     $('#buttGames').click(onFilterCLick);
-    
-
     
     $('#buttFurniture').click(function () {
         if ($.inArray(arrFurniture[0], arrOutput) == -1) {
@@ -38,36 +34,28 @@
         }
         voidLoop(arrOutput);
     });
-     
+    
+    //returns the same array with differentindexes
+    //o - input array
     function shuffle(o) {
         for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x)        ;
         return o;
     }
     
+    //changes the appearance of the selected filter
     function onFilterCLick() {
-        //$('#buttFurniture').css("background-color", "#F1F1F1");
-        //$('#buttCars').css("background-color", "#F1F1F1");
-        //$('#buttGames').css("background-color", "#F1F1F1");
-        //$('#buttFurniture').css("color", "black");
-        //$('#buttCars').css("color", "black");
-        //$('#buttGames').css("color", "black");
-        
         $(this).css("background-color", "#656565");
         $(this).css("color", "white");
 
     }
-
-    function voidLoop(arr) {
-        
-        console.log(arr);
-
+    
+    //enters an infinite loop, going through all of the pictures
+    function voidLoop(arr) {                
         var left = 0;
         var middle = 1;
         var right = 2;        
 
-        setInterval(function () {
-            
-            $('.bottomButt').click(navigatePicture);
+        setInterval(function () {            
             $('#middle').click(popBigPicture);
 
             var arrSize = arrOutput.length - 1;
@@ -96,9 +84,11 @@
             $('#middle').attr('src', arr[middle]);
             $('#rightSide').attr('src', arr[right]);
             navigationIndex = arr.length / middle;
+            $('.bottomButt').click(navigatePicture);
             changeColor(navigationIndex);           
         }, 3000);
         
+        //Pops the middle picture with a different appearance
         function popBigPicture() {
             $('#bigPicture').attr('src', arrOutput[middle]);
             $('#bigPicture').css('visibility', "visible");
@@ -109,15 +99,27 @@
                 $('#exitBig').css('visibility', "hidden");
             });
         }
-
+        
+        //TODO- switch pictures with navigation buttons
         function navigatePicture() {
-            $(this).css("background-color", "#B64561");
+//            var index = arr.length * navigationIndex;            
+            $(this).attr("class", "currentMiddleImage");
             switch (this.id) {
                 case "goTo0":
-                    alert("we here");                    
+                    //code
+                    break;
+                case "goTo1":
+                    //code
+                    break;
+                case "goTo2":
+                    left = 0;
+                    middle = 1;
+                    right = 2;
+                    break;
             }
         }
     }
+    //changes the the color of the current navigation button 
     function changeColor(index) {
         console.log("index " +index);
         
