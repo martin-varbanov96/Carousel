@@ -23,11 +23,11 @@
     table-layout: fixed; /*Optional*/
     border-spacing: 10px; /*Optional*/
 }
-.pictures {
-    width: 440px;
+.pictures {    
+    width: 400px;
+    height: 400px;
 }
 #leftSide, #rightSide {
-    opacity: 10;
     background-color: #716462;
 }
 
@@ -56,11 +56,30 @@
     position:absolute;
     background-color: grey;
     width: 400px;
-    height: 350px;    
-    margin-top: 100px;
+    height: 400px;    
+    margin-top: 66px;
     opacity: 0.9;
 
 }
 #rightMask {
-    margin-left: 900px;
+    margin-left: 808px;
+}
+
+#bigPicture {
+    visibility: hidden;
+    position:absolute;
+    width: 600px;
+    height: 600px;
+    margin: 10px;
+    margin: -450px 0px 250px 300px;
+}
+#exitBig {
+    visibility:hidden;
+    z-index: 1;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    opacity: 0.8;
+    margin: -450px 0 250px 860px;
 }
